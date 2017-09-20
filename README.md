@@ -1,15 +1,15 @@
 # wordstat
-Small python module for simple manipulations with words in files
+Small python module for simple manipulations with words in files \n
 Provides only one class: "WordStat"
 
 ## Arguments
-    ### path - path to your projects directory (default = current directory)
-    ### project - project name directory (default = None, specify if needed)
-    ### files_limit - limit of files count to handle with (default = 100)
-    ### extension - extension of files to handle with (default = '.py')
-    ### word_type - Natural Language ToolKit tag (default = 'VB' - verbs, more information: http://www.nltk.org/book/ch05.html)
-    ### encoding - files encoding (default = 'utf-8')
-    ### func_limit - limit of functions to handle with (default = 100)
+    ###### path - path to your projects directory (default = current directory)
+    ###### project - project name directory (default = None, specify if needed)
+    ###### files_limit - limit of files count to handle with (default = 100)
+    ###### extension - extension of files to handle with (default = '.py')
+    ###### word_type - Natural Language ToolKit tag (default = 'VB' - verbs, more information: http://www.nltk.org/book/ch05.html)
+    ###### encoding - files encoding (default = 'utf-8')
+    ###### func_limit - limit of functions to handle with (default = 100)
 
 ## Install requirements
 ```
