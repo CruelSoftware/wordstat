@@ -8,9 +8,11 @@ Provides only one class: "WordStat"
     project - project name directory (default = None, specify if needed)
     files_limit - limit of files count to handle with (default = 100)
     extension - extension of files to handle with (default = '.py')
-    word_type - Natural Language ToolKit tag (default = 'VB' - verbs, more information:[Nltk Tagger](http://www.nltk.org/book/ch05.html)
+    word_type - Natural Language ToolKit tag (default = 'VB' - verbs)
     encoding - files encoding (default = 'utf-8')
     func_limit - limit of functions to handle with (default = 100)
+
+More information about nltk tagging: [Nltk Tagger](http://www.nltk.org/book/ch05.html)
 
 ## Install requirements
 ```
