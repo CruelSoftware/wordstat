@@ -1,5 +1,5 @@
 # wordstat
-Small python module for simple manipulations with words in files
+Small python module for simple manipulations with words in files, built with python 3
 
 Provides only one class: "WordStat"
 
