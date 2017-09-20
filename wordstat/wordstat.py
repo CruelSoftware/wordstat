@@ -9,6 +9,7 @@ from nltk import pos_tag
 class WordStat():
     def __init__(self, path=None, project=None, files_limit=100, extension='.py', word_type='VB', encoding='utf-8',
                  func_limit=100):
+
         self.path = self._set_path(path, project)
         self.files_limit = files_limit
         self.extension = extension
@@ -17,6 +18,7 @@ class WordStat():
         self.func_limit = func_limit
 
     def __str__(self):
+
         return ('List of files in folder and subfilders:\n {}'.format(self.get_files()) + '\n' +
                 'List of all words in files:\n {}'.format(self.get_all_words()) + '\n' +
                 'Stats of words in functions:\n {}'.format(self.get_func_words_stat()))
@@ -32,16 +34,18 @@ class WordStat():
             raise NotADirectoryError('{} is not a directory'.format(path))
 
     def _flat(self, _list):
-        """ [(1,2), (3,4)] -> [1, 2, 3, 4]"""
+
         return list(itertools.chain(*_list))
 
     def _get_words_from_function_name(self, function_name):
+
         return [word for word in function_name.split('_') if self._is_word_of_type(word)]
 
     def _is_word_of_type(self, word):
         if not word:
             return False
         pos_info = pos_tag([word])
+
         return pos_info[0][1] == self.word_type
 
     def get_files(self):
@@ -51,6 +55,7 @@ class WordStat():
             for file in files_list:
                 filenames.append(os.path.join(dirpath, file))
         filenames = filenames[:self.files_limit] if self.files_limit else filenames
+
         return filenames
 
     def _get_trees(self):
@@ -61,6 +66,7 @@ class WordStat():
                 main_file_content = attempt_handler.read()
             tree = ast.parse(main_file_content)
             trees.append(tree)
+
         return trees
 
     def _get_all_names(self, tree):
