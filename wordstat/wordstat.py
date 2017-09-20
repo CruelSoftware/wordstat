@@ -50,8 +50,6 @@ class WordStat():
             files_list = [file for file in files if file.endswith(self.extension)]
             for file in files_list:
                 filenames.append(os.path.join(dirpath, file))
-        # filenames = [f for f in os.listdir(self.path) if (
-        # os.path.isfile(os.path.join(self.path, f)) and os.path.join(self.path, f).endswith(self.extension))]
         filenames = filenames[:self.files_limit] if self.files_limit else filenames
         return filenames
 
