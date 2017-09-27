@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-
+import os
 import argparse
 
 from wordstat.wordstat import WordStat
@@ -13,15 +13,19 @@ def createParser():
     parser.add_argument('-func_limit', type=int)
     parser.add_argument('-extension', type=str)
     parser.add_argument('-encoding', type=str)
-    parser.add_argument('-word_type', type=str, choices=['VB', 'NN', 'CC', 'RB', 'IN', 'JJ'])
+    parser.add_argument('-word_type', type=str, choices=['VB', 'NN', 'CC', 'RB', 'IN', 'JJ', 'CD', 'DT',
+                                                         'EX', 'FW', 'JJR', 'JJS', 'LS', 'MD', 'NNP', 'NNPS',
+                                                         'NNS', 'PDT', 'POS', 'PRP', 'PRP$', 'RBR', 'RBS',
+                                                         'RP', 'SYM', 'TO', 'UH', 'VBD', 'VBG', 'VBN', 'VBP',
+                                                         'VBZ', 'WDT', 'WP', 'WP$', 'WRB'])
 
     return parser
+
 
 if __name__ == '__main__':
     parser = createParser()
     namespace = parser.parse_args()
     params = namespace.__dict__ if namespace else {}
-    clear_params = {key:value for key, value in params.items() if value is not None}
+    clear_params = {key: value for key, value in params.items() if value is not None}
     wordstat = WordStat(**clear_params)
     print(wordstat)
-
